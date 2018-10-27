@@ -5,7 +5,7 @@ import { Palestra } from './palestra.model';
 
 @Injectable()
 export class PalestraService {
-    url = 'localhost:8000/palestras/';
+    url = 'http://localhost:8000/palestras/';
 
     constructor(private http: HttpClient) { }    
 

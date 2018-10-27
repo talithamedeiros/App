@@ -1,8 +1,5 @@
 <ion-list>
     <ion-item *ngFor="let palestra of palestras">
-        <h2>{{ palestra.palestrante }}</h2>
-        <h4>{{ palestra.descricao }}</h4>
-        <p>{{ palestra.data }}</p>
-        <p>{{ palestra.sala }}</p>
+        <h4>{{ palestra.palestrante }} - {{ palestra.sala }} ({{ palestra.data | date: 'dd/MM/yyyy HH:mm' }})</h4>
     </ion-item>
 </ion-list>

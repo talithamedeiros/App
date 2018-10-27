@@ -5,7 +5,7 @@
   "proxies": [
     {
       "path": "/home",
-      "proxyUrl": "localhost:8000/palestras/"
+      "proxyUrl": "http://localhost:8000/palestras/"
     }
   ]
 }
