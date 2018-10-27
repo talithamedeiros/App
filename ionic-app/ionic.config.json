@@ -1,5 +1,11 @@
 {
   "name": "ionic-app",
   "integrations": {},
-  "type": "angular"
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/home",
+      "proxyUrl": "localhost:8000/palestras/"
+    }
+  ]
 }
