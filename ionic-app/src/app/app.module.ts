@@ -8,8 +8,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PalestraService } from './palestras/palestras.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ProgramacaoService } from './programacao/programacao.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
   ],
   providers: [
-    PalestraService,
+    ProgramacaoService,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

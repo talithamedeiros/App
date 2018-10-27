@@ -8,7 +8,8 @@ import { TabsPageRoutingModule } from './tabs.router.module';
 
 import { TabsPage } from './tabs.page';
 import { HomePageModule } from '../home/home.module';
-import { PalestrasPageModule } from '../palestras/palestras.module';
+import { ProgramacaoPageModule } from '../programacao/programacao.module';
+import { MarcadosPageModule } from '../marcados/marcados.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { PalestrasPageModule } from '../palestras/palestras.module';
     FormsModule,
     TabsPageRoutingModule,
     HomePageModule,
-    PalestrasPageModule
+    ProgramacaoPageModule,
+    MarcadosPageModule    
   ],
   declarations: [TabsPage]
 })
