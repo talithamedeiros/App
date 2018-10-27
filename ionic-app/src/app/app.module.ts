@@ -6,15 +6,14 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
 import { PalestraService } from './palestras/palestras.service';
-import { PalestrasComponent } from './palestras/palestras.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent, 
+    AppComponent
   ],
   entryComponents: [],
   imports: [

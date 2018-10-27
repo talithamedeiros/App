@@ -4,9 +4,9 @@ import { PalestraService } from './palestras.service';
 
 @Component({
   selector: 'app-palestras',
-  templateUrl: './palestras.component.html',
+  templateUrl: './palestras.page.html',
 })
-export class PalestrasComponent implements OnInit {
+export class PalestrasPage implements OnInit {
     palestras: Palestra[] = [];
 
     constructor(private service: PalestraService) { }
