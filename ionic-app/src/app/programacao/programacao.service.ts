@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Palestra } from './palestra.model';
+import { Programacao } from './programacao.model';
 
 @Injectable()
-export class PalestraService {
+export class ProgramacaoService {
     url = 'http://localhost:8000/palestras/';
 
     constructor(private http: HttpClient) { }    
 
-    getPalestras(): Observable<Palestra[]> {
-        return this.http.get<Palestra[]>(this.url);
+    getPalestras(): Observable<Programacao[]> {
+        return this.http.get<Programacao[]>(this.url);
     }
 }

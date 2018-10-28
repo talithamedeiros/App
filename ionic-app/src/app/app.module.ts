@@ -6,15 +6,14 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PalestraService } from './palestras/palestras.service';
-import { PalestrasComponent } from './palestras/palestras.component';
+import { ProgramacaoService } from './programacao/programacao.service';
 
 @NgModule({
   declarations: [
-    AppComponent, 
+    AppComponent
   ],
   entryComponents: [],
   imports: [
@@ -25,7 +24,7 @@ import { PalestrasComponent } from './palestras/palestras.component';
     HttpClientModule,
   ],
   providers: [
-    PalestraService,
+    ProgramacaoService,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
