@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include
-from iftech.views import PalestraViewSet
+from iftech.views import ProgramacaoViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'palestras', PalestraViewSet)
+router.register(r'programacao', ProgramacaoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
