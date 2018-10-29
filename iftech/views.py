@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .models import Palestra
-from .serializers import PalestraSerializer
+from .models import Programacao
+from .serializers import ProgramacaoSerializer
 
-class PalestraViewSet(viewsets.ModelViewSet):
-    queryset = Palestra.objects.all()
-    serializer_class = PalestraSerializer
+class ProgramacaoViewSet(viewsets.ModelViewSet):
+    queryset = Programacao.objects.all()
+    serializer_class = ProgramacaoSerializer
