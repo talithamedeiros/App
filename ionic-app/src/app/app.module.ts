@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProgramacaoService } from './programacao/programacao.service';
 
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -18,7 +20,11 @@ import { ProgramacaoService } from './programacao/programacao.service';
   entryComponents: [],
   imports: [
     BrowserModule, 
-    IonicModule.forRoot(), 
+    IonicModule.forRoot(),
+    IonicStorageModule.forRoot({
+      name: '__mydb',
+         driverOrder: ['indexeddb', 'sqlite', 'websql']
+    }), 
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
