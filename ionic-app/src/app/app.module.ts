@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProgramacaoService } from './programacao/programacao.service';
+import { DatePipe } from '@angular/common';
+import { FavoritosService } from './marcados/marcados.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ProgramacaoService } from './programacao/programacao.service';
     ProgramacaoService,
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    DatePipe,
+    FavoritosService
   ],
   bootstrap: [AppComponent]
 })

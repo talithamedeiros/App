@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FavoritosService, ProgramacaoList } from '../marcados/marcados.service';
 
 @Component({
   selector: 'app-marcados',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['marcados.page.scss']
 })
 export class MarcadosPage implements OnInit {
-    constructor() { }
+  favoritos: ProgramacaoList[];
+  constructor(private favoritosService: FavoritosService) { }
 
-    ngOnInit() { }
-
+  ngOnInit() {
+    this.favoritosService.getAll()
+      .then((result) => {
+        this.favoritos = result;
+      });
+  }
 }

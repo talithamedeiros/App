@@ -1,9 +1,15 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-title>Marcados</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-title>Marcados</ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content>
-   <p>...</p>
+  <ion-list>
+    <ion-card *ngFor="let item of favoritos">
+      <ion-item (click)="rmFav(item.key)">
+        {{ item.programacao.palestrante }} - {{ item.programacao.sala }} ({{ item.programacao.data | date:'dd/MM/yyyyHH:mm' }}
+      </ion-item>
+    </ion-card>
+  </ion-list>
 </ion-content>
