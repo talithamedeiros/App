@@ -7,7 +7,7 @@ import { FavoritosService } from '../marcados/marcados.service';
 
 @Injectable()
 export class ProgramacaoService {
-    url = 'http://localhost:8000/palestras/';
+    url = 'http://localhost:8000/programacao/';
 
     constructor(private http: HttpClient, private favoritosService: FavoritosService) { }    
 
