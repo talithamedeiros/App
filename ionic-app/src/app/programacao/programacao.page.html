@@ -1,14 +1,14 @@
 <ion-header>
     <ion-toolbar>
-      <ion-title>Programação</ion-title>
+        <ion-title>Programação</ion-title>
     </ion-toolbar>
-  </ion-header>
+</ion-header>
 
 <ion-content>
-    <ion-list >
+    <ion-list>
         <ion-card *ngFor="let palestra of palestras">
-            <ion-item (click)="addFavorito(palestra)">
-                {{palestra.palestrante}}
+            <ion-item (click)="addFav(palestra)">
+                {{ palestra.palestrante }} - {{ palestra.sala }} ({{ palestra.data | date: 'dd/MM/yyyy HH:mm' }})
             </ion-item>
         </ion-card>
     </ion-list>

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Programacao } from '../programacao/programacao.model';
-
-import { Storage } from '@ionic/storage';
+import { FavoritosService, ProgramacaoList } from '../marcados/marcados.service';
 
 @Component({
   selector: 'app-marcados',
@@ -9,14 +7,13 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['marcados.page.scss']
 })
 export class MarcadosPage implements OnInit {
-    favoritos : Programacao[] = [];
+  favoritos: ProgramacaoList[];
+  constructor(private favoritosService: FavoritosService) { }
 
-    constructor(private storage: Storage) { }
-
-    ngOnInit() { 
-      this.storage.get('programacao')
-            .then(programacao => {
-                this.favoritos.push(programacao);
-            });
-    }
+  ngOnInit() {
+    this.favoritosService.getAll()
+      .then((result) => {
+        this.favoritos = result;
+      });
+  }
 }
