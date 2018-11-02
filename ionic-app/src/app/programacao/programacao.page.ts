@@ -2,29 +2,32 @@ import { Component, OnInit } from '@angular/core';
 import { Programacao } from './programacao.model';
 import { ProgramacaoService } from './programacao.service';
 
-import { Storage } from '@ionic/storage';
+import { ToastController} from '@ionic/angular';
 
 @Component({
     selector: 'app-programacao',
     templateUrl: './programacao.page.html',
     styleUrls: ['programacao.page.scss']
 })
-export class ProgramacaoPage implements OnInit {
+export class ProgramacaoPage {
     palestras: Programacao[] = [];
 
-    constructor(private service: ProgramacaoService,
-                private storage: Storage) { }
+    constructor(private service: ProgramacaoService, private toastCtrl: ToastController) { }
 
-    ngOnInit() {
+    ionViewWillEnter() {
         this.service.getPalestras()
             .subscribe(palestras => {
-                console.log(palestras);
                 this.palestras = palestras;
             });
     }
 
-    addFavorito(programacao: Programacao){
-        this.storage.set('programacao', programacao)
+    async addFavorito(programacao: Programacao) {
+        this.service.addFav(programacao)
+        let toast = await this.toastCtrl.create({
+            message: 'Minicurso/Palestra adicionada como favorito!',
+            duration: 3000,
+            position: 'top'
+        });
+        await toast.present();
     }
-
 }

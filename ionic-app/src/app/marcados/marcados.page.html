@@ -7,8 +7,9 @@
 <ion-content>
   <ion-list>
     <ion-card *ngFor="let item of favoritos">
-      <ion-item (click)="rmFav(item.key)">
-        {{ item.programacao.palestrante }} - {{ item.programacao.sala }} ({{ item.programacao.data | date:'dd/MM/yyyyHH:mm' }}
+      <ion-item (click)="removeFav(item)">
+        {{ item.programacao.palestrante }} - {{ item.programacao.sala }} ({{ item.programacao.data |
+        date:'dd/MM/yyyyHH:mm' }}
       </ion-item>
     </ion-card>
   </ion-list>

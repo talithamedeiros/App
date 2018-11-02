@@ -15,11 +15,11 @@ export class ProgramacaoService {
         return this.http.get<Programacao[]>(this.url);
     }
 
-    private addFav(programacao: Programacao) {
+    public addFav(programacao: Programacao) {
         this.favoritosService.insert(programacao);
     }
 
-    private rmFav(key: string) {
+    public rmFav(key: string) {
         this.favoritosService.remove(key);
     }
     

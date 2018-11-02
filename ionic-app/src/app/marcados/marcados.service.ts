@@ -16,10 +16,12 @@ export class FavoritosService {
   }
 
   private save(key: string, programacao: Programacao) {
+    console.log('salvou');
     return this.storage.set(key, programacao);
   }
 
   public remove(key: string) {
+    console.log('removeu');
     return this.storage.remove(key);
   }
 
@@ -27,17 +29,17 @@ export class FavoritosService {
     let favoritos: ProgramacaoList[] = [];
 
     return this.storage.forEach((value: Programacao, key: string, iterationNumber: Number) => {
-      let atividades = new ProgramacaoList();
-      atividades.key = key;
-      atividades.programacao = value;
-      favoritos.push(atividades);
+      let programacao = new ProgramacaoList();
+      programacao.key = key;
+      programacao.programacao = value;
+      favoritos.push(programacao);
     })
       .then(() => {
         return Promise.resolve(favoritos);
       })
       .catch((error) => {
         return Promise.reject(error);
-      });
+      });    
   }
 }
 

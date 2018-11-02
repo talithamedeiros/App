@@ -7,7 +7,7 @@
 <ion-content>
     <ion-list>
         <ion-card *ngFor="let palestra of palestras">
-            <ion-item (click)="addFav(palestra)">
+            <ion-item (click)="addFavorito(palestra);">
                 {{ palestra.palestrante }} - {{ palestra.sala }} ({{ palestra.data | date: 'dd/MM/yyyy HH:mm' }})
             </ion-item>
         </ion-card>

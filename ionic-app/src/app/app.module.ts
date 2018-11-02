@@ -23,10 +23,11 @@ import { IonicStorageModule } from '@ionic/storage';
   imports: [
     BrowserModule, 
     IonicModule.forRoot(),
-    IonicStorageModule.forRoot({
-      name: '__mydb',
-         driverOrder: ['indexeddb', 'sqlite', 'websql']
-    }), 
+    IonicStorageModule.forRoot(
+      //{
+      //name: '__mydb',
+       //  driverOrder: ['indexeddb', 'sqlite', 'websql']}
+    ), 
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
