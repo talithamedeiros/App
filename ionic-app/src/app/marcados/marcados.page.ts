@@ -9,22 +9,22 @@ import { ToastController, NavController, Events } from '@ionic/angular';
 })
 export class MarcadosPage {
   favoritos: ProgramacaoList[];
-  isFirstLoad = false;
 
   constructor(
     private favoritosService: FavoritosService,
     private toastCtrl: ToastController,
-    public navCtrl: NavController) { }
+    public navCtrl: NavController,
+    public events: Events) {
+    events.subscribe('addfav', () => {
+      this.ionViewWillEnter();
+    });
+  }
 
   ionViewWillEnter() {
     this.favoritosService.getAll()
       .then((result) => {
         this.favoritos = result;
       });
-  }
-
-  atualizar(){
-    this.ionViewWillEnter();
   }
 
   async removeFav(item: ProgramacaoList) {

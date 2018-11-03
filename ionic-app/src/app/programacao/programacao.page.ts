@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Programacao } from './programacao.model';
 import { ProgramacaoService } from './programacao.service';
 
-import { ToastController} from '@ionic/angular';
+import { ToastController, Events } from '@ionic/angular';
 import { FavoritosService } from '../marcados/marcados.service';
 
 @Component({
@@ -13,7 +13,10 @@ import { FavoritosService } from '../marcados/marcados.service';
 export class ProgramacaoPage {
     palestras: Programacao[] = [];
 
-    constructor(private service: ProgramacaoService, private toastCtrl: ToastController, private favoritosService: FavoritosService) { }
+    constructor(
+        private service: ProgramacaoService,
+        private toastCtrl: ToastController,
+        private favoritosService: FavoritosService) { }
 
     ionViewWillEnter() {
         this.service.getPalestras()
