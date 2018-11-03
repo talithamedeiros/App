@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { DatePipe } from '@angular/common';
 import { Programacao } from '../programacao/programacao.model';
 
 @Injectable({
@@ -8,15 +7,19 @@ import { Programacao } from '../programacao/programacao.model';
 })
 export class FavoritosService {
 
-  constructor(private storage: Storage, private datepipe: DatePipe) { }
+  constructor(private storage: Storage) { }
 
-  public insert(programacao: Programacao) {
-    let key = this.datepipe.transform(new Date(), "ddMMyyyyHHmmss");
-    return this.save(key, programacao);
+  async insert(programacao: Programacao) {
+    this.storage.get(programacao.palestrante).then((data) => {
+      if (data == null) {
+        return this.save(programacao.palestrante, programacao);
+      } else {
+        console.log('Atividade já foi adicionada.');
+      }
+    })
   }
 
   private save(key: string, programacao: Programacao) {
-    console.log('salvou');
     return this.storage.set(key, programacao);
   }
 
@@ -28,7 +31,7 @@ export class FavoritosService {
   public getAll() {
     let favoritos: ProgramacaoList[] = [];
 
-    return this.storage.forEach((value: Programacao, key: string, iterationNumber: Number) => {
+    return this.storage.forEach((value: Programacao, key: string) => {
       let programacao = new ProgramacaoList();
       programacao.key = key;
       programacao.programacao = value;
@@ -39,7 +42,7 @@ export class FavoritosService {
       })
       .catch((error) => {
         return Promise.reject(error);
-      });    
+      });
   }
 }
 

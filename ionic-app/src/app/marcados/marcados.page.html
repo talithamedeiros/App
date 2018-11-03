@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content>
+  <ion-button (click)="atualizar()">Atualizar</ion-button>
   <ion-list>
     <ion-card *ngFor="let item of favoritos">
       <ion-item (click)="removeFav(item)">

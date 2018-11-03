@@ -3,6 +3,7 @@ import { Programacao } from './programacao.model';
 import { ProgramacaoService } from './programacao.service';
 
 import { ToastController} from '@ionic/angular';
+import { FavoritosService } from '../marcados/marcados.service';
 
 @Component({
     selector: 'app-programacao',
@@ -12,7 +13,7 @@ import { ToastController} from '@ionic/angular';
 export class ProgramacaoPage {
     palestras: Programacao[] = [];
 
-    constructor(private service: ProgramacaoService, private toastCtrl: ToastController) { }
+    constructor(private service: ProgramacaoService, private toastCtrl: ToastController, private favoritosService: FavoritosService) { }
 
     ionViewWillEnter() {
         this.service.getPalestras()
@@ -22,9 +23,9 @@ export class ProgramacaoPage {
     }
 
     async addFavorito(programacao: Programacao) {
-        this.service.addFav(programacao)
+        this.favoritosService.insert(programacao);
         let toast = await this.toastCtrl.create({
-            message: 'Minicurso/Palestra adicionada como favorito!',
+            message: 'Atividade adicionada como favorito.',
             duration: 3000,
             position: 'top'
         });

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, NgZone } from '@angular/core';
 import { FavoritosService, ProgramacaoList } from '../marcados/marcados.service';
-import { ToastController, NavController } from '@ionic/angular';
+import { ToastController, NavController, Events } from '@ionic/angular';
 
 @Component({
   selector: 'app-marcados',
@@ -9,17 +9,23 @@ import { ToastController, NavController } from '@ionic/angular';
 })
 export class MarcadosPage {
   favoritos: ProgramacaoList[];
+  isFirstLoad = false;
 
-  constructor(private favoritosService: FavoritosService, private toastCtrl: ToastController, public navCtrl: NavController) { }
+  constructor(
+    private favoritosService: FavoritosService,
+    private toastCtrl: ToastController,
+    public navCtrl: NavController) { }
 
-  ionViewDidEnter() {
-    console.log('entrouu!!!!!!!!!!!!!!!');
+  ionViewWillEnter() {
     this.favoritosService.getAll()
       .then((result) => {
         this.favoritos = result;
       });
   }
 
+  atualizar(){
+    this.ionViewWillEnter();
+  }
 
   async removeFav(item: ProgramacaoList) {
     this.favoritosService.remove(item.key);

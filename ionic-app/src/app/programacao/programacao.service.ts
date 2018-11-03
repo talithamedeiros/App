@@ -9,18 +9,9 @@ import { FavoritosService } from '../marcados/marcados.service';
 export class ProgramacaoService {
     url = 'http://localhost:8000/programacao/';
 
-    constructor(private http: HttpClient, private favoritosService: FavoritosService) { }    
+    constructor(private http: HttpClient) { }    
 
     getPalestras(): Observable<Programacao[]> {
         return this.http.get<Programacao[]>(this.url);
     }
-
-    public addFav(programacao: Programacao) {
-        this.favoritosService.insert(programacao);
-    }
-
-    public rmFav(key: string) {
-        this.favoritosService.remove(key);
-    }
-    
 }
