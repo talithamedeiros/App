@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Programacao } from '../programacao/programacao.model';
-import { Events } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavoritosService {
 
-  constructor(private storage: Storage, private events: Events) { }
+  constructor(private storage: Storage) { }
 
   async insert(programacao: Programacao) {
     this.storage.get(programacao.palestrante).then((data) => {
