@@ -5,7 +5,7 @@
 :root {
 
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #48CAB0;
   --ion-color-primary-rgb: 56,128,255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255,255,255;
@@ -76,4 +76,17 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 
+  //tabs
+  --ion-tabbar-background-color: #48cab0;
+  --ion-tabbar-background-color-rgb: 72, 202, 176;
+  --ion-text-color-step-400: #383a3e;
+  --ion-tabbar-text-color-active: #111;
+
+  --ion-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Roboto", sans-serif;
+
+  --ion-toolbar-background-color: #86888f;
+  --ion-toolbar-text-color: #ffff;
+
+  //cards
+  --ion-item-background-color: #ffdd57;
 }
