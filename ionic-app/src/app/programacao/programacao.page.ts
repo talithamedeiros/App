@@ -12,7 +12,7 @@ import { FavoritosService } from '../marcados/marcados.service';
 export class ProgramacaoPage {
     palestras: Programacao[] = [];
     filterData: Programacao[] = [];
-    //searchTerm: any = "";
+    searchTerm: any = "";
 
     constructor(
         private service: ProgramacaoService,
@@ -25,13 +25,17 @@ export class ProgramacaoPage {
             this.filterData = this.palestras;
         })
     }
-/*
+
     setFiltered() {
-        this.filterData = this.palestras.filter((item) => {
-            return item.descricao.toLowerCase().includes(this.searchTerm.toLowerCase());
-        });
+        if (this.searchTerm.length <= 1) {
+            this.filterData = this.palestras;
+        } else {
+            this.filterData = this.palestras.filter((item) => {
+                return item.descricao.toLowerCase().includes(this.searchTerm.toLowerCase());
+            });
+        }
     }
-*/   
+
     async addFavorito(programacao: Programacao) {
         this.favoritosService.insert(programacao);
         let toast = await this.toastCtrl.create({
