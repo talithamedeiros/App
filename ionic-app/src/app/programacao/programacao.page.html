@@ -12,11 +12,11 @@
     </ion-searchbar>
     <ion-list>
         <ion-card *ngFor="let palestra of filterData" (click)="addFavorito(palestra)">
-            <ion-card-content>
-                <ion-card-subtitle>{{ palestra.data | date: 'dd/MM/yyyy HH:mm' }}</ion-card-subtitle>
+            <ion-card-content [ngClass]="getClass(palestra.tipo)">
+                <ion-card-subtitle><b>{{ palestra.data | date: 'dd/MM/yyyy HH:mm' }}</b></ion-card-subtitle>
                 <ion-card-title>{{ palestra.descricao }}</ion-card-title>
                     <ion-icon name="person"></ion-icon> Autor: {{ palestra.palestrante }}<br>
-                    <ion-icon name="chatbubbles"></ion-icon> Local: {{ palestra.sala }}<br>
+                    <ion-icon name="pin"></ion-icon> Local: {{ palestra.sala }}<br>
                     [ {{ palestra.tipo }} ]
             </ion-card-content>
         </ion-card>

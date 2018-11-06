@@ -45,4 +45,11 @@ export class ProgramacaoPage {
         });
         await toast.present();
     }
+
+    getClass(tipo){
+        if (tipo == 'Minicurso')
+            return 'ion-card-content-style-minicurso';
+        else
+            return 'ion-card-content-style-palestra';
+    }
 }
