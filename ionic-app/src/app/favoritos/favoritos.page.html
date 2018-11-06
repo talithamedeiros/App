@@ -10,8 +10,9 @@
       <ion-card-content>
         <ion-card-subtitle>{{ item.programacao.data | date: 'dd/MM/yyyy HH:mm' }}</ion-card-subtitle>
         <ion-card-title>{{ item.programacao.descricao }}</ion-card-title>
-        Palestrante: {{ item.programacao.palestrante }}<br>
-        Sala: {{item.programacao.sala}}
+          <ion-icon name="person"></ion-icon> Palestrante: {{ item.programacao.palestrante }}<br>
+          <ion-icon name="chatbubbles"></ion-icon> Sala: {{item.programacao.sala}}<br>
+          [ {{ item.programacao.tipo }} ]
       </ion-card-content>
     </ion-card>
   </ion-list>
