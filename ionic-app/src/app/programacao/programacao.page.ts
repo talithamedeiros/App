@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Programacao } from './programacao.model';
-import { ProgramacaoService } from './programacao.service';
+import { Programacao } from '../models/Programacao.model';
+import { ProgramacaoService } from '../services/programacao.service';
 import { ToastController } from '@ionic/angular';
-import { FavoritosService } from '../marcados/marcados.service';
+import { FavoritosService } from '../services/favoritos.service';
 
 @Component({
     selector: 'app-programacao',

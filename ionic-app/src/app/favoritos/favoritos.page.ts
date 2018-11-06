@@ -1,13 +1,14 @@
 import { Component, OnInit, ChangeDetectorRef, NgZone } from '@angular/core';
-import { FavoritosService, ProgramacaoList } from '../marcados/marcados.service';
 import { ToastController, NavController, Events } from '@ionic/angular';
+import {ProgramacaoList} from "../models/ProgramacaoList.model";
+import {FavoritosService} from "../services/favoritos.service";
 
 @Component({
   selector: 'app-marcados',
-  templateUrl: './marcados.page.html',
-  styleUrls: ['marcados.page.scss']
+  templateUrl: './favoritos.page.html',
+  styleUrls: ['favoritos.page.scss']
 })
-export class MarcadosPage {
+export class FavoritosPage {
   favoritos: ProgramacaoList[];
 
   constructor(

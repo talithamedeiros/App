@@ -7,7 +7,7 @@
 <ion-content>
     <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFiltered()"></ion-searchbar>
     <ion-list>
-        <ion-card *ngFor="let palestra of filterData" (click)="addFavorito(palestra);">
+        <ion-card *ngFor="let palestra of filterData" (click)="addFavorito(palestra)">
             <ion-card-content>
                 <ion-card-subtitle>{{ palestra.data | date: 'dd/MM/yyyy HH:mm' }}</ion-card-subtitle>
                 <ion-card-title>{{ palestra.descricao }}</ion-card-title>

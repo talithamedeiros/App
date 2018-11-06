@@ -9,9 +9,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProgramacaoService } from './programacao/programacao.service';
+import { ProgramacaoService } from './services/programacao.service';
 import { DatePipe } from '@angular/common';
-import { FavoritosService } from './marcados/marcados.service';
+import { FavoritosService } from './services/favoritos.service';
 
 import { IonicStorageModule } from '@ionic/storage';
 

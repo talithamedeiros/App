@@ -9,7 +9,7 @@ import { TabsPageRoutingModule } from './tabs.router.module';
 import { TabsPage } from './tabs.page';
 import { HomePageModule } from '../home/home.module';
 import { ProgramacaoPageModule } from '../programacao/programacao.module';
-import { MarcadosPageModule } from '../marcados/marcados.module';
+import { FavoritosPageModule } from '../favoritos/favoritos.module';
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import { MarcadosPageModule } from '../marcados/marcados.module';
     TabsPageRoutingModule,
     HomePageModule,
     ProgramacaoPageModule,
-    MarcadosPageModule    
+    FavoritosPageModule
   ],
   declarations: [TabsPage]
 })
