@@ -5,14 +5,19 @@
 </ion-header>
 
 <ion-content>
-    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFiltered()"></ion-searchbar>
+    <ion-searchbar 
+        [(ngModel)]="searchTerm" 
+        (ionInput)="setFiltered()"
+        placeholder="Pesquisar por descrição">
+    </ion-searchbar>
     <ion-list>
-        <ion-card *ngFor="let palestra of filterData" (click)="addFavorito(palestra);">
+        <ion-card *ngFor="let palestra of filterData" (click)="addFavorito(palestra)">
             <ion-card-content>
                 <ion-card-subtitle>{{ palestra.data | date: 'dd/MM/yyyy HH:mm' }}</ion-card-subtitle>
                 <ion-card-title>{{ palestra.descricao }}</ion-card-title>
-                Palestrante: {{ palestra.palestrante }}<br>
-                Sala: {{ palestra.sala }}
+                    <ion-icon name="person"></ion-icon> Autor: {{ palestra.palestrante }}<br>
+                    <ion-icon name="chatbubbles"></ion-icon> Local: {{ palestra.sala }}<br>
+                    [ {{ palestra.tipo }} ]
             </ion-card-content>
         </ion-card>
     </ion-list>

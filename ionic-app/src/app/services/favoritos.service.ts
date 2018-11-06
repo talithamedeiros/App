@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { Programacao } from '../programacao/programacao.model';
+import { Programacao } from '../models/Programacao.model';
+import {ProgramacaoList} from "../models/ProgramacaoList.model";
 
 @Injectable({
   providedIn: 'root'
@@ -31,9 +32,7 @@ export class FavoritosService {
     let favoritos: ProgramacaoList[] = [];
 
     return this.storage.forEach((value: Programacao, key: string) => {
-      let programacao = new ProgramacaoList();
-      programacao.key = key;
-      programacao.programacao = value;
+      let programacao = new ProgramacaoList(key, value);
       favoritos.push(programacao);
     })
       .then(() => {
@@ -43,9 +42,4 @@ export class FavoritosService {
         return Promise.reject(error);
       });
   }
-}
-
-export class ProgramacaoList {
-  key: string;
-  programacao: Programacao;
 }
