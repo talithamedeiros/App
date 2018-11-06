@@ -5,7 +5,11 @@
 </ion-header>
 
 <ion-content>
-    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFiltered()"></ion-searchbar>
+    <ion-searchbar 
+        [(ngModel)]="searchTerm" 
+        (ionInput)="setFiltered()"
+        placeholder="Pesquisar"
+        ></ion-searchbar>
     <ion-list>
         <ion-card *ngFor="let palestra of filterData" (click)="addFavorito(palestra)">
             <ion-card-content>

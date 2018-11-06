@@ -23,7 +23,7 @@ export class ProgramacaoPage {
         this.service.getPalestras().subscribe(data => {
             this.palestras = data;
             this.filterData = this.palestras;
-        })
+        });
     }
 
     setFiltered() {
