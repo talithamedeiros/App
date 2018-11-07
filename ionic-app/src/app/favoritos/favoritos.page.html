@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let item of favoritos">
+    <ion-card (click)="removeFav(item)">
+      <ion-card-content [ngClass]="getClass(item.programacao.tipo)">
+        <ion-card-subtitle><b>{{ item.programacao.data | date: 'dd/MM/yyyy HH:mm' }}</b></ion-card-subtitle>
+        <ion-card-title>{{ item.programacao.descricao }}</ion-card-title>
+          <ion-icon name="person"></ion-icon> Autor: {{ item.programacao.palestrante }}<br>
+          <ion-icon name="pin"></ion-icon> Local: {{item.programacao.sala}}<br>
+          [ {{ item.programacao.tipo }} ]
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
