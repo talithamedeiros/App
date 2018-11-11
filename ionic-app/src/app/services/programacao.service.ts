@@ -5,8 +5,8 @@ import { Programacao } from '../models/Programacao.model';
 
 @Injectable()
 export class ProgramacaoService {
-    url = 'http://localhost:8000/programacao/';
-   
+    url = 'https://api-iftech.herokuapp.com/programacao/';
+
     constructor(private http: HttpClient) { }    
 
     getPalestras(): Observable<Programacao[]> {
